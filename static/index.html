@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>DialAgent: analog gauge reader</title>
+<style>
+body { font-family: system-ui, sans-serif; max-width: 720px; margin: 2em auto; }
+table { border-collapse: collapse; width: 100%; }
+td, th { border: 1px solid #ccc; padding: 4px 8px; text-align: left; }
+.confident { color: #0a7a0a; } .uncertain { color: #a86a00; } .failed { color: #b00000; }
+</style>
+</head>
+<body>
+<h1>DialAgent</h1>
+<p>Agentic vision inspector for analog gauges. Upload a gauge image; the frozen agent loop reads the needle and shows every step with latency.</p>
+<input type="file" id="img" accept="image/*">
+<button onclick="send()">Read gauge</button>
+<div id="out"></div>
+<script>
+async function send() {
+  const f = document.getElementById('img').files[0];
+  if (!f) { alert('Choose an image first'); return; }
+  const fd = new FormData(); fd.append('image', f);
+  const r = await fetch('/read', { method: 'POST', body: fd });
+  const d = await r.json();
+  const rd = d.reading;
+  let html = '<h2 class="' + rd.outcomeBucket + '">Value: ' + rd.value +
+    ' &middot; Confidence: ' + rd.confidence +
+    ' &middot; Bucket: ' + rd.outcomeBucket + '</h2>';
+  if (rd.failureReason) html += '<p>Failure reason: ' + rd.failureReason + '</p>';
+  html += '<p>Method A (warpPolar): ' + rd.methodA + ' &middot; Method B (PCA): ' +
+    rd.methodB + ' &middot; Agreement: ' + rd.agreement + '</p>';
+  html += '<h3>Trace</h3><table><tr><th>Step</th><th>Tool</th><th>Latency (ms)</th><th>Output</th></tr>';
+  for (const s of d.trace) {
+    html += '<tr><td>' + s.step + '</td><td>' + s.tool + '</td><td>' +
+      s.latencyMs + '</td><td>' + s.output + '</td></tr>';
+  }
+  html += '</table>';
+  document.getElementById('out').innerHTML = html;
+}
+</script>
+</body>
+</html>
