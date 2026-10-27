@@ -1,0 +1,90 @@
+[
+  {
+    "imageId": "clean_000",
+    "groundTruthValue": 0.0,
+    "fullRange": 100.0,
+    "tolerancePct": 5.0,
+    "variant": "clean",
+    "label": "SYNTHETIC TEST DATA - rendered by generator.py, not a field measurement"
+  },
+  {
+    "imageId": "clean_025",
+    "groundTruthValue": 25.0,
+    "fullRange": 100.0,
+    "tolerancePct": 5.0,
+    "variant": "clean",
+    "label": "SYNTHETIC TEST DATA - rendered by generator.py, not a field measurement"
+  },
+  {
+    "imageId": "clean_050",
+    "groundTruthValue": 50.0,
+    "fullRange": 100.0,
+    "tolerancePct": 5.0,
+    "variant": "clean",
+    "label": "SYNTHETIC TEST DATA - rendered by generator.py, not a field measurement"
+  },
+  {
+    "imageId": "clean_075",
+    "groundTruthValue": 75.0,
+    "fullRange": 100.0,
+    "tolerancePct": 5.0,
+    "variant": "clean",
+    "label": "SYNTHETIC TEST DATA - rendered by generator.py, not a field measurement"
+  },
+  {
+    "imageId": "clean_100",
+    "groundTruthValue": 100.0,
+    "fullRange": 100.0,
+    "tolerancePct": 5.0,
+    "variant": "clean",
+    "label": "SYNTHETIC TEST DATA - rendered by generator.py, not a field measurement"
+  },
+  {
+    "imageId": "corrupt_glare",
+    "groundTruthValue": 50.0,
+    "fullRange": 100.0,
+    "tolerancePct": 5.0,
+    "variant": "glare",
+    "label": "SYNTHETIC TEST DATA - rendered by generator.py, not a field measurement"
+  },
+  {
+    "imageId": "corrupt_lowcontrast",
+    "groundTruthValue": 50.0,
+    "fullRange": 100.0,
+    "tolerancePct": 5.0,
+    "variant": "low_contrast",
+    "label": "SYNTHETIC TEST DATA - rendered by generator.py, not a field measurement"
+  },
+  {
+    "imageId": "corrupt_tilt",
+    "groundTruthValue": 50.0,
+    "fullRange": 100.0,
+    "tolerancePct": 5.0,
+    "variant": "tilt",
+    "label": "SYNTHETIC TEST DATA - rendered by generator.py, not a field measurement"
+  },
+  {
+    "imageId": "corrupt_occlusion",
+    "groundTruthValue": 50.0,
+    "fullRange": 100.0,
+    "tolerancePct": 5.0,
+    "variant": "partial_occlusion",
+    "label": "SYNTHETIC TEST DATA - rendered by generator.py, not a field measurement"
+  },
+  {
+    "imageId": "corrupt_nomarkers",
+    "groundTruthValue": 50.0,
+    "fullRange": 100.0,
+    "tolerancePct": 5.0,
+    "variant": "no_markers",
+    "label": "SYNTHETIC TEST DATA - rendered by generator.py, not a field measurement"
+  },
+  {
+    "imageId": "corrupt_outofrange",
+    "groundTruthValue": null,
+    "fullRange": 100.0,
+    "tolerancePct": 5.0,
+    "variant": "out_of_range",
+    "label": "SYNTHETIC TEST DATA - rendered by generator.py, not a field measurement"
+  }
+]
